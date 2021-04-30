@@ -2,12 +2,12 @@ FROM ubuntu:latest
 
 RUN apt update -y
 RUN apt upgrade -y
-RUN apt install curl cron unzip nano rsyslog -y
+RUN apt install curl cron unzip nano -y
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 RUN unzip awscliv2.zip
 ENV AWS_ACCESS_KEY_ID=#
 ENV AWS_SECRET_ACCESS_KEY=#
-RUN ./aws/install
+#RUN ./aws/install
 
 # Add crontab file in the cron directory
 ADD crontab /etc/cron.d/simple-cron
